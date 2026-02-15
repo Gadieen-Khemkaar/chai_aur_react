@@ -12,9 +12,11 @@ function App() {
   }
   return (  
     <>
+      <div className="container">
       <h1>Dice Roller</h1>
       <p>{dice}</p>
       <button className="roll" onClick={rollDice}>Roll Dice</button>
+      </div>
     </>
   )
 }
