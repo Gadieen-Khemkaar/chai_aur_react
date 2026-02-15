@@ -1,15 +1,22 @@
 .container{
   background-color: black;
   color: aliceblue;
-  padding: 40px;
+  padding:40px;
   border-radius: 15px;
   box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
+h1{
+  margin: 0px;
+}
 p{
   font-size: 60px;
   color: orange;
+  padding: 0%;
+  margin: 0px;
 }
 
 button{
