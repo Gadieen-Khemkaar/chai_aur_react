@@ -1,35 +1,49 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [num1, setNum1] = useState("");
+  const [num2, setNum2] = useState("");
+  const [result, setResult] = useState("");
+
+  function addNumbers() {
+    const sum = Number(num1) + Number(num2);
+    setResult(sum);
+  }
+
+  function subtractNumbers() {
+    const difference = Number(num1) - Number(num2);
+    setResult(difference);
+  }
 
   return (
-    <>
+    <div>
+      <h1>Simple Calculator</h1>
+
+      <input
+        type="number"
+        value={num1}
+        onChange={(e) => setNum1(e.target.value)}
+        placeholder="Enter first number"
+      />
+
+      <input
+        type="number"
+        value={num2}
+        onChange={(e) => setNum2(e.target.value)}
+        placeholder="Enter second number"
+      />
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <button onClick={addNumbers}>+</button>
+        <button onClick={subtractNumbers}>-</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <h2>Result: {result}</h2>
+    </div>
+  );
 }
 
-export default App
+export default App;
+
